@@ -18,28 +18,37 @@
   <meta name="author" content="连思鑫">
   <meta name="keywords" content="博客">
   
-    <meta name="description" content="嵌入式技术栈分析嵌入式开发流程 一般来说，嵌入式开发的基本流程如下图所示。我们“从下往上”讲解。 1、画原理图大学的时候因为一些特殊的原因，接触过电路设计以及硬件开发的知识。但研究并不深，也未曾想到自己会从事嵌入式开发，所以工作时只能花大量时间将其补上。 言归正传，画原理图首先是需要有原理图库，也可以自己构建元器件图，当然也可以从别人那里拷贝。有了原理图库，就开始画原理图。画原理图需要你有很扎实的">
+    <meta name="description" content="【嵌入式笔记1】PC端开发常用工具简介一.编译环境的搭建1 编译工具编译链：目前我所接触到的编译器工具链一共有三个，Linux通用编译链，arm编译链，FT编译链（特定飞腾芯片）。 ARM芯片编译链工具如下图：该工具链包含了编译该芯片程序的gcc与g++环境。 Linux通用环境下编译链（X86芯片）如下图： 飞腾芯片编译链工具如下图：该工具链包含了编译该芯片程序的gcc与g++环境。 WSL：本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【嵌入式笔记0】嵌入式技术栈分析">
-<meta property="og:url" content="https://jinbilianshao.github.io/2022/11/17/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B00%E3%80%91%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF%E6%A0%88%E5%88%86%E6%9E%90/index.html">
+<meta property="og:title" content="【嵌入式笔记1】PC端开发常用工具简介">
+<meta property="og:url" content="https://jinbilianshao.github.io/2022/12/02/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B01%E3%80%91PC%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="连思鑫的博客">
-<meta property="og:description" content="嵌入式技术栈分析嵌入式开发流程 一般来说，嵌入式开发的基本流程如下图所示。我们“从下往上”讲解。 1、画原理图大学的时候因为一些特殊的原因，接触过电路设计以及硬件开发的知识。但研究并不深，也未曾想到自己会从事嵌入式开发，所以工作时只能花大量时间将其补上。 言归正传，画原理图首先是需要有原理图库，也可以自己构建元器件图，当然也可以从别人那里拷贝。有了原理图库，就开始画原理图。画原理图需要你有很扎实的">
+<meta property="og:description" content="【嵌入式笔记1】PC端开发常用工具简介一.编译环境的搭建1 编译工具编译链：目前我所接触到的编译器工具链一共有三个，Linux通用编译链，arm编译链，FT编译链（特定飞腾芯片）。 ARM芯片编译链工具如下图：该工具链包含了编译该芯片程序的gcc与g++环境。 Linux通用环境下编译链（X86芯片）如下图： 飞腾芯片编译链工具如下图：该工具链包含了编译该芯片程序的gcc与g++环境。 WSL：本">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-11-17/2022-11-17-cg449pxsfq.png">
-<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-11-17/2022-11-17-R-C.png">
-<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-11-17/2022-11-17-215454.png">
-<meta property="article:published_time" content="2022-11-17T14:50:00.000Z">
-<meta property="article:modified_time" content="2022-11-17T14:53:37.585Z">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-01.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-02.pmg.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-03.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-04.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-05.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-06.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-07.ping.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-06.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-08.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-09.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-10.png">
+<meta property="og:image" content="https://jinbilianshao.github.io/images/2022-12-2-11.png">
+<meta property="article:published_time" content="2022-12-02T14:07:30.000Z">
+<meta property="article:modified_time" content="2022-12-02T14:47:22.700Z">
 <meta property="article:author" content="连思鑫">
-<meta property="article:tag" content="嵌入式学习笔记">
+<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jinbilianshao.github.io/images/2022-11-17/2022-11-17-cg449pxsfq.png">
+<meta name="twitter:image" content="https://jinbilianshao.github.io/images/2022-12-2-01.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【嵌入式笔记0】嵌入式技术栈分析 - 连思鑫的博客</title>
+  <title>【嵌入式笔记1】PC端开发常用工具简介 - 连思鑫的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【嵌入式笔记0】嵌入式技术栈分析"></span>
+            <span id="subtitle" data-typed-text="【嵌入式笔记1】PC端开发常用工具简介"></span>
           
         </div>
 
@@ -218,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-17 22:50" pubdate>
-          2022年11月17日 晚上
+        <time datetime="2022-12-02 22:07" pubdate>
+          2022年12月2日 晚上
         </time>
       </span>
     
@@ -231,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.9k 字
+          2.8k 字
         
       </span>
     
@@ -242,7 +251,7 @@
         
         
         
-          16 分钟
+          24 分钟
         
       </span>
     
@@ -288,41 +297,47 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【嵌入式笔记0】嵌入式技术栈分析</h1>
+            <h1 style="display: none">【嵌入式笔记1】PC端开发常用工具简介</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年11月17日 晚上
+                    本文最后更新于：2022年12月2日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="嵌入式技术栈分析"><a href="#嵌入式技术栈分析" class="headerlink" title="嵌入式技术栈分析"></a>嵌入式技术栈分析</h1><h2 id="嵌入式开发流程"><a href="#嵌入式开发流程" class="headerlink" title="嵌入式开发流程"></a>嵌入式开发流程</h2><p><img src="/images/2022-11-17/2022-11-17-cg449pxsfq.png" srcset="/img/loading.gif" lazyload alt="流程图"></p>
-<p>一般来说，嵌入式开发的基本流程如下图所示。我们“从下往上”讲解。</p>
-<h3 id="1、画原理图"><a href="#1、画原理图" class="headerlink" title="1、画原理图"></a>1、画原理图</h3><p>大学的时候因为一些特殊的原因，接触过电路设计以及硬件开发的知识。但研究并不深，也未曾想到自己会从事嵌入式开发，所以工作时只能花大量时间将其补上。</p>
-<p>言归正传，画原理图首先是需要有原理图库，也可以自己构建元器件图，当然也可以从别人那里拷贝。有了原理图库，就开始画原理图。画原理图需要你有很扎实的电路、数电、模电、电力电子基础，需要会设计电路原理，需要会器件选型，熟悉芯片的最小系统，熟悉常用的电源电路，熟悉基本的滤波电路和运算放大电路。</p>
-<p>下面是我从网上随便找的原理图，可做参考。</p>
-<p><img src="/images/2022-11-17/2022-11-17-R-C.png" srcset="/img/loading.gif" lazyload alt="R-C"></p>
-<h3 id="2、画PCB图"><a href="#2、画PCB图" class="headerlink" title="2、画PCB图"></a>2、画PCB图</h3><p>原理图画好了以后，开始画PCB板，Printed Circuit Board，印制电路板。画PCB板子，首先是根据选型的元器件，查看元器件的数据手册，根据元器件真实封装大小画出PCB元器件库。有了PCB元器件库，就开始画PCB，画PCB需要你懂如何走线（比如不可以走直角），如何进行强弱电分离，如何避免电源对信号的干扰，如何处理EMI、EMC，如何对高频信号进行蛇形等长走线，专门干这个的叫layout工程师（有时候还需要画多层板，更难）。以上两步常用的软件有AD、PADS、Cadence Allegro等。</p>
-<p>如果说原理图是对电路板的逻辑设计，那PCB就是对电路板的实现设计。这里主要目标是针对如何更好的实现电路板，让其更加符合理想化。围绕的问题在于元器件大小，元器件排布，走线之间影响最小等等。</p>
-<p>因为最近比较关注嘉立创的开源项目，一个迷你的小电视，在此截个PCB图以作参考。</p>
-<p><img src="/images/2022-11-17/2022-11-17-215454.png" srcset="/img/loading.gif" lazyload alt="2022-11-17-215454"></p>
-<h3 id="3、打板与焊接"><a href="#3、打板与焊接" class="headerlink" title="3、打板与焊接"></a>3、打板与焊接</h3><p>打板就是将板子给做出来，而PCB设计便是对板子的设计。PCB画好了以后，可以发给厂家打板生产（如嘉立创，每个月都有两次免费打板的机会），板子回来以后，进行焊接。焊接也是一个技术活，最难的是焊接芯片，其他元器件都好焊。这个因为没有实际动手操作过，就不多说了。</p>
-<h3 id="4、嵌入式软件设计（系统移植）"><a href="#4、嵌入式软件设计（系统移植）" class="headerlink" title="4、嵌入式软件设计（系统移植）"></a>4、嵌入式软件设计（系统移植）</h3><p>本人工作的主要内容便在这个环节。</p>
-<p>当确定经过测试硬件没有问题后，板子需要交到软件工程师手中进行设计与开发。因为windows系统太过于臃肿，所以板载系统都是Linux（Linux系统不仅小，还可以经过剪裁和二次开发使其更符合相关业务）。</p>
-<p>关于嵌入式设计，还有一个新技术，这也是我工作后才知道的FPGA开发设计。该技术具有其特殊性，在可编程芯片上才有这项技术。FPGA本质上其实也算是软件层面的，或者说是硬件到软件过度层面的。因为所用的电子元器件具有特殊性，为可编程芯片。所以该芯片的引脚和功能出厂时并未固定死，也就留出来一定的设计空间。但其实也受限于硬件，硬件从成样后便固定死了，所以FPGA的设计被局限于产品芯片的引脚等。（FPGA刚学没多久，这些都是自接触以来的个人理解，如有错误请评论，我会及时修正）</p>
-<p>嵌入式软件设计有单片机的程序设计（一般是C语言）和系统移植的Linux软件开发（这个语言就很很广泛了，但C&#x2F;C++因为更近低层，性能更强，所以用的更多）。</p>
-<p>嵌入式Linux软件开发分为：系统移植，驱动编写，程序开发，固件烧写等。</p>
-<p>因为从事的工作涉及到特定的芯片以及该芯片相关的技术与软件，所以后续的嵌入式学习笔记将以工作所需技术为主进行编写。</p>
-<h3 id="5、通讯协议的定制与测试"><a href="#5、通讯协议的定制与测试" class="headerlink" title="5、通讯协议的定制与测试"></a>5、通讯协议的定制与测试</h3><p>该步骤其实是和上一节同步进行的，因为在写程序的时候往往就开始针对通信协议进行商讨和制定。而我写代码的主要内容便是围绕着这些协议，编写UDP承载或者TCP（很少用），然后针对数据进行各种位运算，一层层的给数据套上自定义的协议头等等，这里计算机网络相关的知识就显得尤为重要。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果让我说整个嵌入式技术栈中哪一步最难？我个人觉得局限性越大的技术越难，因为你要在极小的设计空间内完成业务的设计流程，是一件很费脑细胞的一件事。</p>
-<p>在这里，我认为难度：硬件&gt;FPGA&gt;软件开发。</p>
-<p>软件的优势在于开源社区，网上具有许多资料，学习门槛低。</p>
-<p>FPGA在不同芯片中具有不同的设计，相关资料少，如果针对较为流行通用的芯片（例如赛灵思）进行学习难度应该不是太大，但不限于一类芯片时，各种芯片之间的区别，兼容性等等能让你头疼。例如我最近在做从赛灵思跨度到复旦微的国产化就问题不断。</p>
-<p>硬件的开发相关的学习资料就更少了，除此之外硬件出BUG在网上是很难去搜索答案的，需要许多工具去检验（例如万用表。频谱仪，示波器等等）而且硬件的学习成本极高。（各类元器件都好贵的，一个好的频谱仪和示波器价格都贵的吓人）</p>
+              <h1 id="【嵌入式笔记1】PC端开发常用工具简介"><a href="#【嵌入式笔记1】PC端开发常用工具简介" class="headerlink" title="【嵌入式笔记1】PC端开发常用工具简介"></a>【嵌入式笔记1】PC端开发常用工具简介</h1><h2 id="一-编译环境的搭建"><a href="#一-编译环境的搭建" class="headerlink" title="一.编译环境的搭建"></a>一.编译环境的搭建</h2><h3 id="1-编译工具"><a href="#1-编译工具" class="headerlink" title="1 编译工具"></a>1 编译工具</h3><p>编译链：目前我所接触到的编译器工具链一共有三个，Linux通用编译链，arm编译链，FT编译链（特定飞腾芯片）。</p>
+<p>ARM芯片编译链工具如下图：<br><img src="/images/2022-12-2-01.png" srcset="/img/loading.gif" lazyload alt="uploaded!"><br>该工具链包含了编译该芯片程序的gcc与g++环境。</p>
+<p>Linux通用环境下编译链（X86芯片）如下图：<br><img src="/images/2022-12-2-02.pmg.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>飞腾芯片编译链工具如下图：<br><img src="/images/2022-12-2-03.png" srcset="/img/loading.gif" lazyload alt="uploaded!"><br>该工具链包含了编译该芯片程序的gcc与g++环境。</p>
+<p>WSL：本程序中运行环境为Linux，所以程序内需要用到许多Linux的库文件。又因为虚拟机相对而言卡顿且不易于管理和操作。所以WSL的优势就体现出来了。WSL是Windows的一种Linux容器，较于虚拟机具有启动快速流畅，方便对Linux文件系统的管理，文件传输更为方便。（可以在Windows文件系统下对其进行操作）剪切板互通，可以随意粘贴和复制等等。<br><img src="/images/2022-12-2-04.png" srcset="/img/loading.gif" lazyload alt="windows本地目录文件"><br><img src="/images/2022-12-2-05.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>Clion：因为长时间使用该软件，对该软件相较于其他软件熟悉，故此使用该软件作为编译开发的IDE。该IDE配合WSL开发将会非常便捷，在windows环境下开发Linux环境的应用程序不需要导入Linux的库文件，该ide可以自己检索。<br><img src="/images/2022-12-2-06.png" srcset="/img/loading.gif" lazyload alt="uploaded!"><br><img src="/images/2022-12-2-07.ping.png" srcset="/img/loading.gif" lazyload alt="uploaded!"><br>针对不同编译链可以在CMake中进行指定编译。如上图，下文也会给出样例。</p>
+<p>Cmake：该程序是用于管理和自动生成makefile的工具，对于大型项目来说，项目的体积越大，makefile的编写就越复杂，从而不利于维护和修改。而Cmake可以读入所有的源文件，自动生成makefile，且该工具具有跨平台的特性。</p>
+<h3 id="2-编译环境配置"><a href="#2-编译环境配置" class="headerlink" title="2 编译环境配置"></a>2 编译环境配置</h3><p>首先导入代码或者新建Clion工程，在IDE中配置Clion的编译链。（如图，该软件会自动检测WSL中的编译环境）<br><img src="/images/2022-12-2-06.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>编译链配置好后，开始编写cmakelists.text文档，有一点需要注意，在编写cmakelists.text时需要指定一下编译器。如：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#FT</span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-gcc&quot;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-g++&quot;</span>)</span></span><br><span class="hljs-selector-id">#arm</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-g++&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>cmakelists.text在IDE中也可以自动生成，略作修改即可。</p>
+<p>本项目完整的cmakelists.text内容如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">cmake_minimum_required</span><span class="hljs-params">(VERSION <span class="hljs-number">3.16</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">project</span><span class="hljs-params">(XiaoxinIPDetectionTool)</span></span><br><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_CXX_STANDARD <span class="hljs-number">14</span>)</span></span><br><br><span class="hljs-function"><span class="hljs-title">FIND_PACKAGE</span><span class="hljs-params">(OpenMP REQUIRED)</span></span><br><span class="hljs-keyword">if</span> (OPENMP_FOUND)<br>    message(<span class="hljs-string">&quot;OPENMP FOUND&quot;</span>)<br>    set(CMAKE_C_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_C_FLAGS&#125; $&#123;OpenMP_C_FLAGS&#125;&quot;</span>)<br>    set(CMAKE_CXX_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;OpenMP_CXX_FLAGS&#125;&quot;</span>)<br>    set(CMAKE_EXE_LINKER_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;OpenMP_EXE_LINKER_FLAGS&#125;&quot;</span>)<br><br>endif ()<br><br><span class="hljs-selector-id">#FT</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-g++&quot;</span>)<br><br><span class="hljs-selector-id">#arm</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-g++&quot;</span>)<br><br><br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(.)</span></span><br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(PublicPackage)</span></span><br>......略过...ide可自动生成<br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(PublicPackage/Tools)</span></span><br><br>add_executable(XiaoxinIPDetectionTool<br>        ......可通过ide自动生成，该处略过本项目的文件树<br>        iner_ip<span class="hljs-selector-class">.cpp</span><br>        iner_ip<span class="hljs-selector-class">.h</span><br>        <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.cpp</span><br>        view_ip<span class="hljs-selector-class">.cpp</span><br>        view_ip<span class="hljs-selector-class">.h</span> <br>        TestDataTransmission<span class="hljs-selector-class">.cpp</span> <br>        TestDataTransmission<span class="hljs-selector-class">.h</span> <br>        Iperf<span class="hljs-selector-class">.cpp</span> <br>        Iperf.h)<br><br></code></pre></td></tr></table></figure>
+<p>完成上述步骤即可编译成执行文件。</p>
+<h3 id="3-调试-x2F-测试工具"><a href="#3-调试-x2F-测试工具" class="headerlink" title="3 调试&#x2F;测试工具"></a>3 调试&#x2F;测试工具</h3><p>MobaXterm：该软件极力推荐，功能很多很全。一般板卡测试都使用串口，这里视测试环境情况而定。例如54所机箱较为靠里，串口线短，笔记本无处安放，连落脚的地方都很小，所以可以将板卡拓展出来的控制网口接交换机，笔记本也接交换机通过ssh去远程控制，可以同时控制多个终端。</p>
+<p>SSH ：先通过串口工具登入板卡的kylin系统，在系统中启动ssh服务。命令如下：</p>
+<pre><code class="hljs">systemctl start sshd          开启SSH服务
+syatemctl is-enabled sshd   设置开启启动ssh服务
+</code></pre>
+<p>其他的Linux版本开启的方法大致略同，偶有差别可百度&#x2F;谷歌解决。<br>如果没有ssh服务，可以通过包管理器进行安装openssh.</p>
+<p>连接ssh使用方法：打开MobaXterm，点击左上角。如图</p>
+<p><img src="/images/2022-12-2-08.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>在选择ssh</p>
+<p><img src="/images/2022-12-2-09.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>记住板卡的IP和用户名和登录密码输入进去</p>
+<p><img src="/images/2022-12-2-10.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>即可登录板卡命令终端界面。</p>
+<p><img src="/images/2022-12-2-11.png" srcset="/img/loading.gif" lazyload alt="uploaded!"></p>
+<p>1.当你成功连接板卡的命令终端界面后，会在窗口的左侧生成一个sftp的窗口，可以方便文件传输和软件的更新。<br>2.在窗口的中间时可以远程控制板卡系统的命令终端窗口。<br>3.在窗口的下方还有一个小栏，会生成监控板卡系统信息的内容。<br>注：需要注意的是，每一个ssh用户都是一个独立的用户空间，也就是说你可以在同一个IP打开多个远程窗口，这些远程窗口在进程之间互不相通。也就是你在第一个ssh窗口打开了一个程序，你在第二个窗口却无法看到它。Ps命令也无法看到它。</p>
 
               
             </div>
@@ -330,34 +345,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">嵌入式学习笔记</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">#嵌入式学习笔记</a>
-      
-    </div>
   
 </div>
 
@@ -367,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【嵌入式笔记0】嵌入式技术栈分析</div>
-      <div>https://jinbilianshao.github.io/2022/11/17/【嵌入式笔记0】嵌入式技术栈分析/</div>
+      <div>【嵌入式笔记1】PC端开发常用工具简介</div>
+      <div>https://jinbilianshao.github.io/2022/12/02/【嵌入式笔记1】PC端开发常用工具简介/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月17日</div>
+          <div>2022年12月2日</div>
         </div>
       
       
@@ -410,18 +397,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/02/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B01%E3%80%91PC%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/" title="【嵌入式笔记1】PC端开发常用工具简介">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【嵌入式笔记1】PC端开发常用工具简介</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/12/%E3%80%90C-%E9%A1%B9%E7%9B%AE%E3%80%91%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E5%B1%80%E5%9F%9F%E7%BD%91%E8%81%8A%E5%A4%A9%E5%AE%A407%EF%BC%9A%E5%85%BC%E5%AE%B9Linux%E7%9A%84%E8%AE%BE%E8%AE%A1/" title="【C++项目】从零开始写一个局域网聊天室07：跨系统兼容Linux的设计">
-                        <span class="hidden-mobile">【C++项目】从零开始写一个局域网聊天室07：跨系统兼容Linux的设计</span>
+                      <a href="/2022/11/17/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B00%E3%80%91%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF%E6%A0%88%E5%88%86%E6%9E%90/" title="【嵌入式笔记0】嵌入式技术栈分析">
+                        <span class="hidden-mobile">【嵌入式笔记0】嵌入式技术栈分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -434,7 +415,7 @@
             
   <article id="comments" lazyload>
     
-  <div id="SOHUCS" sid='https://jinbilianshao.github.io/2022/11/17/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B00%E3%80%91%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF%E6%A0%88%E5%88%86%E6%9E%90/'></div>
+  <div id="SOHUCS" sid='https://jinbilianshao.github.io/2022/12/02/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B01%E3%80%91PC%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
