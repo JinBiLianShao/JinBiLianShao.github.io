@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【破解教程】破解极路由器教程</title>
+      <link href="/2022/12/08/%E3%80%90%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E3%80%91%E7%A0%B4%E8%A7%A3%E6%9E%81%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/"/>
+      <url>/2022/12/08/%E3%80%90%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B%E3%80%91%E7%A0%B4%E8%A7%A3%E6%9E%81%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="破解极路由器教程"><a href="#破解极路由器教程" class="headerlink" title="破解极路由器教程"></a>破解极路由器教程</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p>硬件：</p><ol><li><p>极路由器一台</p></li><li><p>电脑一台</p></li></ol><p>软件：</p><ol><li><p>MobaXterm</p></li><li><p>浏览器</p></li></ol><h2 id="2-开始破解"><a href="#2-开始破解" class="headerlink" title="2.开始破解"></a>2.开始破解</h2><p>因为极路由公司已经倒闭，无法通过官方的途径获取权限开启ssh的22端口。<br>不过有一位大佬出了一个网页，利用local_token uuid 算出cloud_token来开启路由器保留的调试模式。</p><p>在调试模式下即可顺利连接极路由器，从而开启ssh的22端口。</p><p>该大佬网址：<a href="http://www.hiwifi.wtf/">http://www.hiwifi.wtf/</a></p><p>首先你要先用电脑连接上该WiFi，然后打开上方的网址。</p><p>如图：</p><p><img src="/images/2022-12-8-01.png" alt="upload successful"></p><p>点击获取local_token : <a href="http://www.4006024680.com/local-ssh/">点我也可以获取</a></p><p>如图：</p><p><img src="/images/2022-12-8-02.png" alt="upload successful"></p><p>复制第一个框里的文本信息，将其填入大佬网页的对应位置。注意极路由调试工具窗口不要关闭！！</p><p>紧接着获取uuid <a href="http://www.4006024680.com/cgi-bin/turbo/proxy/router_info">点我也可以获取</a></p><p>如图中所圈：</p><p><img src="/images/2022-12-8-03.png" alt="upload successful"></p><p>将图中圈起来的uuid，也就是双引号里面的字符复制到大佬网页的指定位置。</p><p>然后点击提交，会获得cloud_token.</p><p>如图：</p><p><img src="/images/2022-12-8-04.png" alt="upload successful"></p><p>然后将cloud_token后面的字符复制到极路由调试工具窗口的页面，将字符填在第二个输入框中，点提交。</p><p>如图：</p><p><img src="/images/2022-12-8-05.png" alt="upload successful"></p><p>然后会出现一个弹出框，如果一次不行就多点几次提交。</p><p>出现Success: ssh port is 22表示已经开启了ssh的22端口。</p><p>如图：</p><p><img src="/images/2022-12-8-06.png" alt="upload successful"></p><p>注意：该窗口不要关闭，下面我来教你如何让ssh端口处于长期打开，且开机自启。</p><h2 id="3-配置ssh的22端口常开（开机自启）"><a href="#3-配置ssh的22端口常开（开机自启）" class="headerlink" title="3.配置ssh的22端口常开（开机自启）"></a>3.配置ssh的22端口常开（开机自启）</h2><p>因为上一步只是开启了临时ssh的22端口，要想常开需要对系统做一些配置。</p><p>通过MobaXterm的ssh连接：</p><p>主机名：192.168.199.1 </p><p>用户名：root </p><p>密码：你的路由器管理密码   </p><p>端口：22</p><p>进入系统后执行命令：</p><pre><code class="hljs">/etc/init.d/dropbear enable</code></pre><p>    <br>如图：</p><p><img src="/images/2022-12-8-07.png" alt="upload successful"></p><p>然后你就可以随时登录极路由的系统了。</p><h2 id="4-进阶操作"><a href="#4-进阶操作" class="headerlink" title="4.进阶操作"></a>4.进阶操作</h2><p>因为极路由的linux属于超级阉割版，只有寥寥几行命令集。为此少了需要可玩性，为此需要了解该系统的硬件架构，用对应的编译链编译自己想要实现的程序功能。（需要吐槽的是，这个linux被阉割的也太干净了！！！）</p><p>如图：</p><p><img src="/images/2022-12-8-08.png" alt="upload successful"></p><p>只有这么多基础的命令，不过没关系，只要知道架构就能找到对应的编译链，就可以实现很多功能了。</p><p>在终端命令中输入：</p><pre><code class="hljs">uname -a</code></pre><p>便可以查看系统架构。</p><p>如图：</p><p><img src="/images/2022-8-09.png" alt="upload successful"></p><p>由上图可以看出该linux系统创建的时间2017年，架构为mips。</p><p>找到mips架构的编译链便可以在该路由器中跑自己写的程序了。</p><p>关于mips编译链我放在以后专门出一个文章讲解，并带上一个工程。</p><p>结束！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 破解教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 破解教程 </tag>
+            
+            <tag> 嵌入式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【嵌入式笔记1】PC端开发常用工具简介</title>
       <link href="/2022/12/02/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B01%E3%80%91PC%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/"/>
       <url>/2022/12/02/%E3%80%90%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%AC%94%E8%AE%B01%E3%80%91PC%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/</url>
@@ -11,6 +38,18 @@
         <content type="html"><![CDATA[<h1 id="【嵌入式笔记1】PC端开发常用工具简介"><a href="#【嵌入式笔记1】PC端开发常用工具简介" class="headerlink" title="【嵌入式笔记1】PC端开发常用工具简介"></a>【嵌入式笔记1】PC端开发常用工具简介</h1><h2 id="一-编译环境的搭建"><a href="#一-编译环境的搭建" class="headerlink" title="一.编译环境的搭建"></a>一.编译环境的搭建</h2><h3 id="1-编译工具"><a href="#1-编译工具" class="headerlink" title="1 编译工具"></a>1 编译工具</h3><p>编译链：目前我所接触到的编译器工具链一共有三个，Linux通用编译链，arm编译链，FT编译链（特定飞腾芯片）。</p><p>ARM芯片编译链工具如下图：<br><img src="/images/2022-12-2-01.png" alt="uploaded!"><br>该工具链包含了编译该芯片程序的gcc与g++环境。</p><p>Linux通用环境下编译链（X86芯片）如下图：<br><img src="/images/2022-12-2-02.pmg.png" alt="uploaded!"></p><p>飞腾芯片编译链工具如下图：<br><img src="/images/2022-12-2-03.png" alt="uploaded!"><br>该工具链包含了编译该芯片程序的gcc与g++环境。</p><p>WSL：本程序中运行环境为Linux，所以程序内需要用到许多Linux的库文件。又因为虚拟机相对而言卡顿且不易于管理和操作。所以WSL的优势就体现出来了。WSL是Windows的一种Linux容器，较于虚拟机具有启动快速流畅，方便对Linux文件系统的管理，文件传输更为方便。（可以在Windows文件系统下对其进行操作）剪切板互通，可以随意粘贴和复制等等。<br><img src="/images/2022-12-2-04.png" alt="windows本地目录文件"><br><img src="/images/2022-12-2-05.png" alt="uploaded!"></p><p>Clion：因为长时间使用该软件，对该软件相较于其他软件熟悉，故此使用该软件作为编译开发的IDE。该IDE配合WSL开发将会非常便捷，在windows环境下开发Linux环境的应用程序不需要导入Linux的库文件，该ide可以自己检索。<br><img src="/images/2022-12-2-06.png" alt="uploaded!"><br><img src="/images/2022-12-2-07.ping.png" alt="uploaded!"><br>针对不同编译链可以在CMake中进行指定编译。如上图，下文也会给出样例。</p><p>Cmake：该程序是用于管理和自动生成makefile的工具，对于大型项目来说，项目的体积越大，makefile的编写就越复杂，从而不利于维护和修改。而Cmake可以读入所有的源文件，自动生成makefile，且该工具具有跨平台的特性。</p><h3 id="2-编译环境配置"><a href="#2-编译环境配置" class="headerlink" title="2 编译环境配置"></a>2 编译环境配置</h3><p>首先导入代码或者新建Clion工程，在IDE中配置Clion的编译链。（如图，该软件会自动检测WSL中的编译环境）<br><img src="/images/2022-12-2-06.png" alt="uploaded!"></p><p>编译链配置好后，开始编写cmakelists.text文档，有一点需要注意，在编写cmakelists.text时需要指定一下编译器。如：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#FT</span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-gcc&quot;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-g++&quot;</span>)</span></span><br><span class="hljs-selector-id">#arm</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-g++&quot;</span>)<br></code></pre></td></tr></table></figure><p>cmakelists.text在IDE中也可以自动生成，略作修改即可。</p><p>本项目完整的cmakelists.text内容如下：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">cmake_minimum_required</span><span class="hljs-params">(VERSION <span class="hljs-number">3.16</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">project</span><span class="hljs-params">(XiaoxinIPDetectionTool)</span></span><br><br><span class="hljs-function"><span class="hljs-title">set</span><span class="hljs-params">(CMAKE_CXX_STANDARD <span class="hljs-number">14</span>)</span></span><br><br><span class="hljs-function"><span class="hljs-title">FIND_PACKAGE</span><span class="hljs-params">(OpenMP REQUIRED)</span></span><br><span class="hljs-keyword">if</span> (OPENMP_FOUND)<br>    message(<span class="hljs-string">&quot;OPENMP FOUND&quot;</span>)<br>    set(CMAKE_C_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_C_FLAGS&#125; $&#123;OpenMP_C_FLAGS&#125;&quot;</span>)<br>    set(CMAKE_CXX_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; $&#123;OpenMP_CXX_FLAGS&#125;&quot;</span>)<br>    set(CMAKE_EXE_LINKER_FLAGS <span class="hljs-string">&quot;$&#123;CMAKE_EXE_LINKER_FLAGS&#125; $&#123;OpenMP_EXE_LINKER_FLAGS&#125;&quot;</span>)<br><br>endif ()<br><br><span class="hljs-selector-id">#FT</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/aarch64-linux-gnu-g++&quot;</span>)<br><br><span class="hljs-selector-id">#arm</span><br><span class="hljs-selector-id">#set</span>(CMAKE_C_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-gcc&quot;</span>)<br><span class="hljs-selector-id">#set</span>(CMAKE_CXX_COMPILER <span class="hljs-string">&quot;/bin/arm-linux-gnueabihf-g++&quot;</span>)<br><br><br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(.)</span></span><br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(PublicPackage)</span></span><br>......略过...ide可自动生成<br><span class="hljs-function"><span class="hljs-title">include_directories</span><span class="hljs-params">(PublicPackage/Tools)</span></span><br><br>add_executable(XiaoxinIPDetectionTool<br>        ......可通过ide自动生成，该处略过本项目的文件树<br>        iner_ip<span class="hljs-selector-class">.cpp</span><br>        iner_ip<span class="hljs-selector-class">.h</span><br>        <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.cpp</span><br>        view_ip<span class="hljs-selector-class">.cpp</span><br>        view_ip<span class="hljs-selector-class">.h</span> <br>        TestDataTransmission<span class="hljs-selector-class">.cpp</span> <br>        TestDataTransmission<span class="hljs-selector-class">.h</span> <br>        Iperf<span class="hljs-selector-class">.cpp</span> <br>        Iperf.h)<br><br></code></pre></td></tr></table></figure><p>完成上述步骤即可编译成执行文件。</p><h3 id="3-调试-x2F-测试工具"><a href="#3-调试-x2F-测试工具" class="headerlink" title="3 调试&#x2F;测试工具"></a>3 调试&#x2F;测试工具</h3><p>MobaXterm：该软件极力推荐，功能很多很全。一般板卡测试都使用串口，这里视测试环境情况而定。例如54所机箱较为靠里，串口线短，笔记本无处安放，连落脚的地方都很小，所以可以将板卡拓展出来的控制网口接交换机，笔记本也接交换机通过ssh去远程控制，可以同时控制多个终端。</p><p>SSH ：先通过串口工具登入板卡的kylin系统，在系统中启动ssh服务。命令如下：</p><pre><code class="hljs">systemctl start sshd          开启SSH服务syatemctl is-enabled sshd   设置开启启动ssh服务</code></pre><p>其他的Linux版本开启的方法大致略同，偶有差别可百度&#x2F;谷歌解决。<br>如果没有ssh服务，可以通过包管理器进行安装openssh.</p><p>连接ssh使用方法：打开MobaXterm，点击左上角。如图</p><p><img src="/images/2022-12-2-08.png" alt="uploaded!"></p><p>在选择ssh</p><p><img src="/images/2022-12-2-09.png" alt="uploaded!"></p><p>记住板卡的IP和用户名和登录密码输入进去</p><p><img src="/images/2022-12-2-10.png" alt="uploaded!"></p><p>即可登录板卡命令终端界面。</p><p><img src="/images/2022-12-2-11.png" alt="uploaded!"></p><p>1.当你成功连接板卡的命令终端界面后，会在窗口的左侧生成一个sftp的窗口，可以方便文件传输和软件的更新。<br>2.在窗口的中间时可以远程控制板卡系统的命令终端窗口。<br>3.在窗口的下方还有一个小栏，会生成监控板卡系统信息的内容。<br>注：需要注意的是，每一个ssh用户都是一个独立的用户空间，也就是说你可以在同一个IP打开多个远程窗口，这些远程窗口在进程之间互不相通。也就是你在第一个ssh窗口打开了一个程序，你在第二个窗口却无法看到它。Ps命令也无法看到它。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 嵌入式笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式笔记 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -26,14 +65,14 @@
       
       <categories>
           
-          <category> 嵌入式学习笔记 </category>
+          <category> 嵌入式笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 嵌入式学习笔记 </tag>
+            <tag> 嵌入式笔记 </tag>
             
         </tags>
       
@@ -317,9 +356,9 @@
             
             <tag> 局域网聊天室 </tag>
             
-            <tag> socket编程 </tag>
-            
             <tag> 局域网服务器 </tag>
+            
+            <tag> socket编程 </tag>
             
         </tags>
       
@@ -375,9 +414,9 @@
             
             <tag> C++项目 </tag>
             
-            <tag> 局域网聊天室 </tag>
-            
             <tag> socket </tag>
+            
+            <tag> 局域网聊天室 </tag>
             
         </tags>
       
